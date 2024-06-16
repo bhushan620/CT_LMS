@@ -1,0 +1,10 @@
+def print_rangoli(size):
+    # your code goes here
+    chars = list(map(chr, range(97, 123)))[0:n]
+
+    pattern = ['-'.join(chars[i:][::-1] + chars[i+1:]).center(4*n-3, '-') for i in range(n)]
+    print('\n'.join(pattern[::-1] + pattern[1:]))
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
