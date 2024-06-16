@@ -1,0 +1,19 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = input()
+s = [val for val in input().split(" ")]
+s = s[::-1]
+s = set(s)
+N = int(input())
+
+for _ in range(N):
+    command = input().split(" ")
+    try:
+        if command[0] == "pop":
+            s.pop()
+        elif command[0] == "discard":
+            s.discard(command[1])
+        else:
+            s.remove(command[1])
+    except Exception as e:
+        continue
+print(sum(map(int, s)))
