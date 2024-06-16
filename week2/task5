@@ -1,0 +1,15 @@
+def merge_the_tools(string, k):
+    # your code goes here
+    for i in range(0, len(string), k):
+        s = string[i: i+k]
+        result = ''
+        dic = {}
+        for c in s:
+            dic[c] = 1 + dic.get(c, 0)
+            if dic[c] == 1:
+                result += c
+        print(result)
+
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
