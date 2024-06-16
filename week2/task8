@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+def validateRegex(regexString): 
+    try: 
+        regex=re.compile(regexString) 
+        return True 
+    except re.error: 
+        return False
+
+size= int(input()) 
+for i in range(size): 
+    regexString= input() 
+    print(validateRegex(regexString))
