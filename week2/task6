@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+X = int(input())
+available_size = list(map(int,input().split()))
+N = int(input())
+money = 0
+for _ in range (N):
+    customer_size, price = map(int,input().split())
+    if customer_size in available_size:
+        money += price
+        available_size.remove(customer_size)
+    else:
+        continue
+print(money) 
