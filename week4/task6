@@ -1,0 +1,10 @@
+select ciname
+from
+(
+    select city.name as ciname , country.continent as con
+    from city
+    inner join country 
+    on
+    city.countrycode = country.code
+) as names 
+where con='Africa';
