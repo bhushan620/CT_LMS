@@ -1,0 +1,14 @@
+/*
+Enter your query here.
+Please append a semicolon ";" at the end of the query and enter your query in a single line to avoid error.
+*/
+SELECT ROUND(med, 4) AS med
+FROM (
+    SELECT AVG(LAT_N) AS med
+    FROM (
+        SELECT LAT_N, ROW_NUMBER() OVER (ORDER BY LAT_N) AS rn,
+               COUNT(*) OVER () AS cnt
+        FROM STATION
+    )
+    WHERE rn IN (FLOOR((cnt + 1) / 2), CEIL((cnt + 1) / 2))
+);
